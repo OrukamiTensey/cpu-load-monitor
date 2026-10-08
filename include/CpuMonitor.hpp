@@ -22,10 +22,19 @@ public:
     explicit CpuMonitor(const MonitorConfig& config) noexcept;
     ~CpuMonitor() noexcept = default;
 
+    /**
+     * Init State: opens descriptors, pre-allocates static arrays, gathers baseline ticks,
+     * and automatically transitions the system into the Run state.
+     */
     bool init() noexcept;
 
+    /**
+     * Run State: main non-blocking event loop handling on-demand terminal input
+     * and periodic file logging without heap allocations.
+     */
     void run() noexcept;
 
+    // Requests graceful exit on SIGINT / SIGTERM
     static void requestStop() noexcept;
 
 private:
