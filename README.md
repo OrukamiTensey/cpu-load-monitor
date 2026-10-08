@@ -1,6 +1,6 @@
 # CPU Load Monitoring Application
 
-A POSIX-compliant C++17 command-line utility for monitoring per-core CPU load under Linux. Designed specifically for embedded and automotive systems with strict resource management constraints.
+A POSIX-compliant C++17 command-line utility for monitoring per-core CPU load under Linux.
 
 ## Features
 - **Zero dynamic memory allocations** in the `Run` state (static pre-allocated buffers, `std::string_view`, and `std::from_chars`).
