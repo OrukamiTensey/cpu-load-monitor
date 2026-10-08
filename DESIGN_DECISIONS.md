@@ -27,7 +27,7 @@ This document outlines the architectural decisions, constraints, and rationales 
 * **Signal Handling:** Configured via `sigaction` for `SIGINT` and `SIGTERM` to facilitate graceful shutdowns.
 
 ### 1.4 "By Request" Interpretation
-* To fulfill requirement #4 (*"Application shall print CPU load for every core by request"*), the application performs non-blocking I/O multiplexing (`poll` on standard input).
+* The application performs non-blocking I/O multiplexing (`poll` on standard input).
 * The user presses **[ENTER]** in the terminal to immediately trigger a reading and print the load for each logical core to `stdout`.
 
 ### 1.5 Configurable Periodic Logging 
