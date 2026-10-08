@@ -1,0 +1,22 @@
+load("@rules_cc//cc:defs.bzl", "cc_binary")
+
+cc_binary(
+    name = "cpu_monitor",
+    srcs = [
+        "src/main.cpp",
+        "src/CpuMonitor.cpp",
+        "src/CpuStatParser.cpp",
+        "include/CpuMonitor.hpp",
+        "include/CpuStatParser.hpp",
+        "include/FdWrapper.hpp",
+    ],
+    includes = ["include"],
+    copts = [
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Werror",
+        "-O2",
+    ],
+)
